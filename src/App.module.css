@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --ozon-blue:    #0052CC;
+  --ozon-accent:  #00B14F;
+  --ozon-bg:      #F3F7FF;
+  --card-bg:      #FFFFFF;
+  --text-default: #1A1A1A;
+  --text-muted:   #667085;
+  --border-light: #D0D5DD;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes popIn {
+  from { opacity: 0; transform: scale(0.8); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.appWrapper {
+  font-family: 'Inter', sans-serif;
+  background: var(--ozon-bg);
+  background-image: linear-gradient(135deg, rgba(0,82,204,0.1) 0%, rgba(243,247,255,1) 80%);
+  min-height: 100vh;
+  padding: 60px 24px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.card {
+  width: 100%;
+  max-width: 600px;
+  background: var(--card-bg);
+  border-radius: 16px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.05);
+  padding: 40px;
+  animation: fadeIn 0.6s ease-out;
+}
+
+.title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: var(--text-default);
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.row {
+  margin-bottom: 24px;
+}
+.row > label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+.row > select,
+.row > input {
+  width: 100%;
+  font-size: 1rem;
+  padding: 14px 18px;
+  border: 1px solid var(--border-light);
+  border-radius: 10px;
+  color: var(--text-default);
+  background: #fff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.row > select:focus,
+.row > input:focus {
+  border-color: var(--ozon-blue);
+  box-shadow: 0 0 0 4px rgba(0,82,204,0.15);
+  outline: none;
+}
+.row > select {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='%23667085' viewBox='0 0 24 24'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  appearance: none;
+}
+
+.button {
+  display: block;
+  width: 100%;
+  padding: 16px;
+  margin-top: 16px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  background: var(--ozon-blue);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(0,82,204,0.2);
+  transition: background 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+}
+.button:hover {
+  background: #0042A8;
+  box-shadow: 0 8px 24px rgba(0,82,204,0.3);
+}
+.button:active {
+  transform: scale(0.97);
+}
+
+.modalBackdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 10, 30, 0.4);
+  backdrop-filter: blur(2px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  z-index: 1000;
+}
+
+.modalContent {
+  background: var(--card-bg);
+  border-radius: 16px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+  padding: 32px;
+  max-width: 380px;
+  width: 100%;
+  text-align: center;
+  animation: popIn 0.4s ease-out;
+}
+.modalContent h3 {
+  font-size: 1.25rem;
+  margin-bottom: 12px;
+  color: var(--text-default);
+}
+.modalContent p {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--ozon-accent);
+  margin: 20px 0;
+}
+.modalContent .button {
+  margin-top: 0;
+}
