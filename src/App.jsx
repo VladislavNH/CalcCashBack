@@ -1,4 +1,3 @@
-// src/App.jsx
 import React, { useState, useMemo, useEffect } from 'react';
 import styles from './App.module.css';
 import { ACCOUNT_LEVELS, getAvailableCategories, calculateCashback, findCategoryByMcc } from './utils/cashback';
